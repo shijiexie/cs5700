@@ -62,7 +62,7 @@ print("Password response:", recv)
 # Create a MIME multipart message
 msg = MIMEMultipart()
 msg['From'] = username
-msg['To'] = "styumi@163.com"  # Replace with recipient's email address
+msg['To'] = "styumi@163.com"  
 msg['Subject'] = "TEST OF DD"
 
 # Attach text part
@@ -70,7 +70,7 @@ text = "I love computer networks!"
 msg.attach(MIMEText(text, 'plain'))
 
 # Attach image part
-filename = "/Users/xieshijie/Desktop/cs5700/Assignment/WeChatf43302ce3dfbddd8f07f20d1d24f1380.png"  # Specify the path to your image
+filename = "/Users/xieshijie/Desktop/cs5700/Assignment/WeChatf43302ce3dfbddd8f07f20d1d24f1380.png"  
 try:
     with open(filename, 'rb') as f:
         image = MIMEImage(f.read())
@@ -89,7 +89,7 @@ recv2 = clientSocket.recv(1024).decode()
 print(recv2)
 
 # Send RCPT TO command and print server response
-rcptToCommand = "RCPT TO:<styumi@163.com>\r\n"  # Replace with recipient's email address
+rcptToCommand = "RCPT TO:<styumi@163.com>\r\n"  
 clientSocket.send(rcptToCommand.encode())
 recv3 = clientSocket.recv(1024).decode()
 print(recv3)
